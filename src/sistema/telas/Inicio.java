@@ -3,6 +3,7 @@ package sistema.telas;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import sistema.Navegador;
 
 /**
  *Tela inicial para escolha das opções do sistema
@@ -14,6 +15,7 @@ JLabel labelTitle;
 public Inicio(){
 criarComponentes();
 criarEventos();
+Navegador.habilitarMenu();
 }
 
 public void criarComponentes(){

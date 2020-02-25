@@ -32,7 +32,7 @@ criarEventos();
 private void criarComponentes(){
 setLayout(null);
 
-JLabel labelTitle =  new JLabel("Cadastro do Cargo", JLabel.CENTER);
+labelTitle =  new JLabel("Cadastro do Cargo", JLabel.CENTER);
 labelTitle.setFont(new Font(labelTitle.getFont().getName(), Font.PLAIN, 20 ));
 labelRole = new JLabel("Nome do cargo: ", JLabel.LEFT);
 fieldRole = new JTextField();

@@ -13,8 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import sistema.entidades.Funcionario;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
+
 import java.util.Locale;
 import java.util.Date;
 import java.util.logging.Level;
@@ -27,7 +26,9 @@ import javax.swing.JFormattedTextField;
 import sistema.BancoDeDados;
 import sistema.entidades.*;
 import sistema.Navegador;
-import java.text.SimpleDateFormat;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.ParseException;
 import java.text.ParseException;
 /**
  *Classe de criação da tela para inserção de Funcionários no BD
@@ -121,8 +122,7 @@ public void criarEventos(){
       nowEmployer.setEmail(fieldEmail.getText());
       Cargo selectedRole = (Cargo) comboBoxRole.getSelectedItem();
       if(selectedRole!=null) nowEmployer.setCargo(selectedRole.getID());
-      
-      
+      nowEmployer.setSalario(Double.valueOf(fieldWage.getText().replace(",", ".")));    
       sqlInserirFuncionario(nowEmployer);
     }
 });    
@@ -193,6 +193,7 @@ try{
 // conexão com o BD usando a bariável conexao do tipo Connection
 conexao = DriverManager.getConnection(BancoDeDados.conectionString, BancoDeDados.user, BancoDeDados.password);
 
+//String de argumento para o a variável PreparedStatement InstrucaoSQL
 String Template = "INSERT INTO funcionarios (nome,sobrenome,dataNascimento, email, cargo, salario)";
 Template = Template+"VALUES (?,?,?,?,?,?)";
 /*instruões SQL criando preparedStatement pela execução do método create na variavel conexao
@@ -202,7 +203,7 @@ instrucaoSQL = conexao.prepareStatement(Template);
 para inserir cada campo das variáveis ORM entidades na tabela Funcionários*/
 instrucaoSQL.setString(1, nowEmployer.getNome());
 instrucaoSQL.setString(1, nowEmployer.getSobrenome());
-instrucaoSQL.setDate(3, nowEmployer.getDataNascimento());
+instrucaoSQL.setString(3, nowEmployer.getDataNascimento());
 instrucaoSQL.setString(4, nowEmployer.getEmail());
 if(nowEmployer.getCargo()>0){
    instrucaoSQL.setInt(5, nowEmployer.getCargo());
