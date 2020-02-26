@@ -3,9 +3,7 @@ package sistema;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import sistema.telas.Login;
-import sistema.telas.Inicio;
-import sistema.telas.CargosInserir;
+
 /**
  *Sistema simples de funcinários com JDBC SQL SERVER
  * @author Fabricio Almeida da Silva Nunes
@@ -25,14 +23,7 @@ public class Sistema {
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setLocationRelativeTo(null);
     
-    //tela de login chamada da classe Login no pacote telas
-    tela = new Inicio();
-    tela.setVisible(true);
-    frame.add(tela);
-    
-    frame.setVisible(true);
-    
-    
-    
+    //chamada do metodo Login na classe navegador que chama classe Login do pacote Telas
+        Navegador.login();
     }
 }

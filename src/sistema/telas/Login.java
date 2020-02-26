@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JPanel;
+import sistema.Navegador;
 
 /**
  *Classe de definição da tela de Login do sistema de cadastro
@@ -64,6 +65,12 @@ private void criarEventos(){
 buttonEntry.addActionListener(new ActionListener(){ 
     @Override
     public void actionPerformed(ActionEvent e){
+     //validação das credenciais no banco para permissão do acesso ao sistema
+     if(fieldUser.getText().equals("Admin")&& new String(fieldPswd.getPassword()).equals("dbAdmin4321!")){
+       Navegador.inicio();
+     }else{
+         JOptionPane.showMessageDialog(null, "Acesso não permitido! Credenciais(Login ou Senha)inválidas.");
+     }
      }
    }
 );

@@ -5,7 +5,9 @@
  */
 package sistema.entidades;
 
-import java.sql.Date;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 
 /**
  * classe ORM para mapear a entidade relacional Funcionário 
@@ -16,10 +18,15 @@ public class Funcionario {
 private int ID; // variável que armazena ID do funcionário
 private String nome; // variável que armazena nome do funcionário
 private String sobrenome; // variável que armazena sobrenome do funcionário
-private Date dataNascimento; // variável que armazena dat_nascimento
+private String dataNascimento; // variável que armazena dat_nascimento
 private String email; // variável que armazena email
 private int cargo; // variável que armazena cargo do funcionário
 private double salario; // variável que armazena salário do funcionário
+//conversão da data inserida no cmapo fieldBirthDate de util.date para String
+
+SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");    
+
+
 
     public int getID() {
         return ID;
@@ -45,11 +52,11 @@ private double salario; // variável que armazena salário do funcionário
         this.sobrenome = sobrenome;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
