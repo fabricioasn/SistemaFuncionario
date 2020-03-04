@@ -20,7 +20,7 @@ import org.jfree.data.general.DefaultPieDataset;
 
 /**
  * Tela para gerar relatórios de funcionários por cargo
- * @author Fabricio
+ * @author Fabricio Almeida da Silva Nunes
  */
 public class RelatoriosCargos extends JPanel {
     JLabel labelTitle, labelDescription;
