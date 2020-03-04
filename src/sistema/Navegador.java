@@ -65,13 +65,13 @@ Navegador.atualizarTela();
 }
 public static void relatorioCargos(){
 Sistema.tela = new RelatoriosCargos();
-Sistema.frame.setTitle("Funcionários Company SA - Relatórios de Funcionários por Cargos");
+Sistema.frame.setTitle("Funcionários Company SA - Funcionários por Cargos");
 Navegador.atualizarTela();
 
 }
 public static void relatorioSalarios(){
 Sistema.tela = new RelatoriosSalarios();
-Sistema.frame.setTitle("Funcionários Company SA - Relatórios de Funcionários por faixa salarial");
+Sistema.frame.setTitle("Funcionários Company SA - Funcionários por faixa salarial");
 Navegador.atualizarTela();    
 }
 
@@ -112,9 +112,9 @@ private static void construirMenu(){
   //menu relatórios
   menuReports = new JMenu("Relatórios");
   menuBar.add(menuReports);
-  miReportRoles = new JMenuItem("Relatórios por cargo");
+  miReportRoles = new JMenuItem("Funcionários por cargo");
   menuReports.add(miReportRoles);
-  miReportWage = new JMenuItem("Relatórios por salário");
+  miReportWage = new JMenuItem("Salário dos Funcionários");
   menuReports.add(miReportWage);    
   criarEventosMenu();
   }  
