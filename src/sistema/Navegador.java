@@ -1,11 +1,8 @@
 
 package sistema;
 
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JPanel;
-import javax.swing.JOptionPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -14,8 +11,8 @@ import sistema.telas.*;
 
 
 /**
- * Classe que gerencia a navegação pelo sistema entre todas as telas, administra o menu
- * e comunica todos os Swing DAOs
+ * Classe VIEW que gerencia a navegação pelo sistema entre todas as telas, administra o menu
+ * e comunica todos os Swing ao DAO
  * @author Fabricio Almeida da Silva Nunes
  */
 public class Navegador {
@@ -42,10 +39,14 @@ Sistema.frame.setTitle("Funcionários Company SA - Cadastrar cargos");
 Navegador.atualizarTela();     
 }
 public static void funcionariosConsultar(){
-    
+Sistema.tela= new FuncionariosConsultar();
+Sistema.frame.setTitle("Funcionários Company SA - Consultar cargos");
+Navegador.atualizarTela();   
 }
-public static void funcionariosEditar(){
-    
+public static void funcionariosEditar(Funcionario employer){
+Sistema.tela= new FuncionariosEditar(employer);
+Sistema.frame.setTitle("Funcionários Company SA - Editar cargos");
+Navegador.atualizarTela();     
 }
 public static void cargosCadastrar(){
 Sistema.tela= new CargosInserir();
@@ -63,7 +64,10 @@ Sistema.frame.setTitle("Funcionários Company SA - Editar cargos");
 Navegador.atualizarTela();     
 }
 public static void relatorioCargos(){
-    
+Sistema.tela = new RelatoriosCargos();
+Sistema.frame.setTitle("Funcionários Company SA - Relatórios de Funcionários por Cargos");
+Navegador.atualizarTela();
+
 }
 public static void relatorioSalarios(){
     
