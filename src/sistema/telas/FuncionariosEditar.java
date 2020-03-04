@@ -5,32 +5,24 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
-import javax.swing.text.MaskFormatter;
 import javax.swing.JComboBox;
 import sistema.BancoDeDados;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.text.ParseException;
-import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import sistema.entidades.*;
 import sistema.Navegador;
 
 /**
  *Classe de criação da tela para edição de cargos já inseridos no BD
- * @author Fabricio Fabricio Almeida da Silva Nunes
+ * @author Fabricio Fabricio Almeida da Silva Nunes  
  */
 public class FuncionariosEditar extends JPanel {
 Funcionario nowEmployer;
