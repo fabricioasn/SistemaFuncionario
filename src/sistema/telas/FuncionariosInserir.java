@@ -5,17 +5,13 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import sistema.entidades.Funcionario;
-
 import java.util.Locale;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -29,7 +25,7 @@ import sistema.Navegador;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
-import java.text.ParseException;
+
 /**
  *Classe de criação da tela para inserção de Funcionários no BD
  * @author Fabricio Fabricio Almeida da Silva Nunes
@@ -50,7 +46,7 @@ criarEventos();
 Navegador.habilitarMenu();
 }
 
-public  void criarComponentes(){
+private  void criarComponentes(){
 setLayout(null);
 
 labelTitle =  new JLabel("Cadastro do Funcionário", JLabel.CENTER);
@@ -111,7 +107,7 @@ sqlCarregarCargos();
         
 setVisible(true);    
 }
-public void criarEventos(){
+private void criarEventos(){
     buttonRecord.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e){
