@@ -104,18 +104,18 @@ conexao = DriverManager.getConnection(BancoDeDados.conectionString, BancoDeDados
 // criando a instrução SQL 
 instrucaoSQL = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 String query = "SELECT";
-query = query + "COUNT(case when salario < 1000 then 1 end) AS Faixa Salarial 1,";
-query = query + "COUNT(case when salario >= 1000 AND salario < 2000 then 1 end) AS Faixa Salarial 2,";
-query = query + "COUNT(case when salario >= 2000 AND salario < 4000 then 1 end) AS Faixa Salarial 3,";
-query = query + "COUNT(case when salario >= 4000 then 1 end) AS Faixa Salarial 4";
-query = query + "FROM funcionarios";
+query = query + " COUNT(case when salario < 1000 then 1 end) AS Faixa_Salarial_1,";
+query = query + " COUNT(case when salario >= 1000 AND salario < 2000 then 1 end) AS Faixa_Salarial_2,";
+query = query + " COUNT(case when salario >= 2000 AND salario < 4000 then 1 end) AS Faixa_Salarial_3,";
+query = query + " COUNT(case when salario >= 4000 then 1 end) AS Faixa_Salarial_4";
+query = query + " FROM funcionarios";
 resultados = instrucaoSQL.executeQuery(query);
 
 while (resultados.next()) {
-data.addValue(resultados.getInt("Faixa Salarial 1"),"Até R$ 1.000,00", "< R$ 1.000,00");
-data.addValue(resultados.getInt("Faixa Salarial 2"),"De R$ 1.000,00 até R$ 2.000,00", "R$ 1.000,00 - R$ 2.000,00");
-data.addValue(resultados.getInt("Faixa Salarial 3"),"De R$ 2.000,00 até R$ 4.000,00", "R$ 2.000,00 - R$ 4.000,00");
-data.addValue(resultados.getInt("Faixa Salarial 4"),"A partir de R$ 4.000,00", "> R$ 4.000,00");
+data.addValue(resultados.getInt("Faixa_Salarial_1"),"Até R$ 1.000,00", "< R$ 1.000,00");
+data.addValue(resultados.getInt("Faixa_Salarial_2"),"De R$ 1.000,00 até R$ 2.000,00", "R$ 1.000,00 - R$ 2.000,00");
+data.addValue(resultados.getInt("Faixa_Salarial_3"),"De R$ 2.000,00 até R$ 4.000,00", "R$ 2.000,00 - R$ 4.000,00");
+data.addValue(resultados.getInt("Faixa_Salarial_4"),"A partir de R$ 4.000,00", "> R$ 4.000,00");
 }
             
  return data;
