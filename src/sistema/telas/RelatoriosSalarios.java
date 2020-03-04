@@ -107,7 +107,7 @@ String query = "SELECT";
 query = query + "COUNT(case when salario < 1000 then 1 end) AS Faixa Salarial 1,";
 query = query + "COUNT(case when salario >= 1000 AND salario < 2000 then 1 end) AS Faixa Salarial 2,";
 query = query + "COUNT(case when salario >= 2000 AND salario < 4000 then 1 end) AS Faixa Salarial 3,";
-query = query + "COUNT(case when salario >= 4000 then 1 end) AS Faixa Salarial 4,";
+query = query + "COUNT(case when salario >= 4000 then 1 end) AS Faixa Salarial 4";
 query = query + "FROM funcionarios";
 resultados = instrucaoSQL.executeQuery(query);
 
