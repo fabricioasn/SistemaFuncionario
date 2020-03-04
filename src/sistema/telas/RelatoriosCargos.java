@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistema.telas;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -21,7 +17,6 @@ import org.jfree.chart.labels.PieSectionLabelGenerator;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
-
 
 /**
  * Tela para gerar relatórios de funcionários por cargo
@@ -80,7 +75,7 @@ public class RelatoriosCargos extends JPanel {
 
     private DefaultPieDataset criarDadosGrafico() {
         
-        DefaultPieDataset dados = new DefaultPieDataset();
+        DefaultPieDataset data = new DefaultPieDataset();
            
         // conexão
         Connection conexao;
@@ -100,13 +95,13 @@ public class RelatoriosCargos extends JPanel {
             resultados = instrucaoSQL.executeQuery(query);
 
             while (resultados.next()) {
-                dados.setValue(resultados.getString("nome"), resultados.getInt("quantidade"));
+                data.setValue(resultados.getString("nome"), resultados.getInt("quantidade"));
             }
             
-            return dados;
+            return data;
             
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Ocorreu um erro criar o relatório.\n\n"+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro criar o relatório por Cargos.\n\n"+ex.getMessage());
             Navegador.inicio();
         }
         
