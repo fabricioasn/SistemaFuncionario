@@ -70,7 +70,9 @@ Navegador.atualizarTela();
 
 }
 public static void relatorioSalarios(){
-    
+Sistema.tela = new RelatoriosSalarios();
+Sistema.frame.setTitle("Funcionários Company SA - Relatórios de Funcionários por faixa salarial");
+Navegador.atualizarTela();    
 }
 
 private static void atualizarTela(){
