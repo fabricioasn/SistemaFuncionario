@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 /**
  *Sistema simples de funcinários com JDBC SQL SERVER
- * @author Fabricio Almeida da Silva Nunes
+ * @author Fabricio Almeida da Silva Nunes  
  * Trabalho final do curso da fundação bradesco de java avançado
  */
 public class Sistema {
@@ -18,7 +18,7 @@ public class Sistema {
     criarComponentes(); 
     }
     private static void criarComponentes(){
-    frame = new JFrame("Sistema");
+    frame = new JFrame("Sistema de Funcionários");
     frame.setSize(800,600);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setLocationRelativeTo(null);

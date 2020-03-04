@@ -22,6 +22,7 @@ import sistema.Navegador;
 
 /**
  *Tela para edição de cargos já inseridos no BD
+ *Classe de criação da tela para edição de cargos já inseridos no BD
  * @author Fabricio Fabricio Almeida da Silva Nunes  
  */
 public class FuncionariosEditar extends JPanel {

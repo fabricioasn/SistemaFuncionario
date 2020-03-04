@@ -1,11 +1,8 @@
 
 package sistema;
 
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JPanel;
-import javax.swing.JOptionPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -14,9 +11,9 @@ import sistema.telas.*;
 
 
 /**
- * Classe que gerencia a navegação pelo sistema entre todas as telas, administra o menu
- * e comunica todos os Swing DAOs
- * @author Fabricio Almeida da Silva Nunes
+ * Classe VIEW que gerencia a navegação pelo sistema entre todas as telas, administra o menu
+ * e comunica todos os Swing ao DAO
+ * @author Fabricio Almeida da Silva Nunes 
  */
 public class Navegador {
 private static boolean menuBuilt;   
@@ -42,10 +39,14 @@ Sistema.frame.setTitle("Funcionários Company SA - Cadastrar cargos");
 Navegador.atualizarTela();     
 }
 public static void funcionariosConsultar(){
-    
+Sistema.tela= new FuncionariosConsultar();
+Sistema.frame.setTitle("Funcionários Company SA - Consultar cargos");
+Navegador.atualizarTela();   
 }
-public static void funcionariosEditar(){
-    
+public static void funcionariosEditar(Funcionario employer){
+Sistema.tela= new FuncionariosEditar(employer);
+Sistema.frame.setTitle("Funcionários Company SA - Editar cargos");
+Navegador.atualizarTela();     
 }
 public static void cargosCadastrar(){
 Sistema.tela= new CargosInserir();
@@ -63,10 +64,15 @@ Sistema.frame.setTitle("Funcionários Company SA - Editar cargos");
 Navegador.atualizarTela();     
 }
 public static void relatorioCargos(){
-    
+Sistema.tela = new RelatoriosCargos();
+Sistema.frame.setTitle("Funcionários Company SA - Funcionários por Cargos");
+Navegador.atualizarTela();
+
 }
 public static void relatorioSalarios(){
-    
+Sistema.tela = new RelatoriosSalarios();
+Sistema.frame.setTitle("Funcionários Company SA - Funcionários por faixa salarial");
+Navegador.atualizarTela();    
 }
 
 private static void atualizarTela(){
@@ -106,9 +112,9 @@ private static void construirMenu(){
   //menu relatórios
   menuReports = new JMenu("Relatórios");
   menuBar.add(menuReports);
-  miReportRoles = new JMenuItem("Relatórios por cargo");
+  miReportRoles = new JMenuItem("Funcionários por cargo");
   menuReports.add(miReportRoles);
-  miReportWage = new JMenuItem("Relatórios por salário");
+  miReportWage = new JMenuItem("Salário dos Funcionários");
   menuReports.add(miReportWage);    
   criarEventosMenu();
   }  

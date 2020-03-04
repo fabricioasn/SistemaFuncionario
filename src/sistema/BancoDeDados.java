@@ -4,7 +4,7 @@ package sistema;
 /**
  *Classe estática para conexão com banco de dados
  * Objeto único de classe estática para acesso aos dados(DAO)
- * @author Fabricio
+ * @author Fabricio Almeida da Silva Nunes
  */
 public class BancoDeDados {
     public static String conectionString = "jdbc:sqlserver://localhost:1433;databaseName=sistema_de_funcionarios";
